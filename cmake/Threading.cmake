@@ -34,8 +34,10 @@ endif()
 
 # Always require pthreads even for sequential threading (required for e.g.
 # std::call_once that relies on mutexes)
+if(NOT QNX)
 find_package(Threads REQUIRED)
 list(APPEND EXTRA_SHARED_LIBS "${CMAKE_THREAD_LIBS_INIT}")
+endif()
 
 # A macro to avoid code duplication
 macro(find_package_tbb)

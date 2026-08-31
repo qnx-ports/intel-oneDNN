@@ -26,6 +26,12 @@ target_include_directories(
     ${OBJ_LIB}
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/xbyak_aarch64
 )
+if(QNX)
+    target_compile_options(
+        ${OBJ_LIB}
+        PRIVATE "-march=armv8.2-a+sve"
+    )
+endif()
 
 set_property(GLOBAL APPEND PROPERTY DNNL_LIB_DEPS
     $<TARGET_OBJECTS:${OBJ_LIB}>)

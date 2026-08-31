@@ -29,6 +29,8 @@
 #include "util_impl_mac.h"
 #elif defined(_M_ARM64)
 #include "util_impl_windows.h"
+#elif defined(__QNX__)
+#include "util_impl_qnx.h"
 #else
 #error "Unsupported OS"
 #endif

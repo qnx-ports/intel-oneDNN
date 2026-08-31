@@ -17,7 +17,7 @@
 #ifndef XBYAK_AARCH64_UTIL_H_
 #define XBYAK_AARCH64_UTIL_H_
 
-#if !(defined(__linux__) || defined(__APPLE__) || defined(_M_ARM64))
+#if !(defined(__linux__) || defined(__APPLE__) || defined(_M_ARM64) || defined(__QNX__))
 #error "Unsupported OS"
 #endif
 
