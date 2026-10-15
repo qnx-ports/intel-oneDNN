@@ -158,6 +158,8 @@ Cpu::Cpu() {
   info = new CpuInfoMac();
 #elif defined(_M_ARM64)
   info = new CpuInfoWindows();
+#elif defined(__QNX__)
+  info = new CpuInfoQNX();
 #endif
 }
 
